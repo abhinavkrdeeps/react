@@ -1,26 +1,46 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Hello from './Hello';
-import './style.css';
+import ReactDOM from 'react-dom';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
-    };
-  }
+function Books(){
 
-  render() {
-    return (
-      <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
-      </div>
-    );
-  }
+  return(
+    <div>
+    <Book/>
+    <Book/>
+    <Book/>
+    <Book/>
+    </div>
+  )
 }
 
-render(<App />, document.getElementById('root'));
+function Book(){
+
+  return(
+    <section>
+    <CoverImage/>
+    <Title/>
+    <Author/>
+    </section>
+  )
+}
+
+function CoverImage(){
+
+  return(
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCfwgJxkpxNBZrgdgdy1zNGmJb31IeoOTnzPkvb3bWMpcofQz16A&s" alt="" width="200"></img>
+  )
+}
+function Title(){
+  return(
+    <h4>Amazon.in</h4>
+  )
+}
+function Author(){
+  return(
+    <h5>Abhinav Jha</h5>
+  )
+}
+
+
+ReactDOM.render(<Books/>,
+document.getElementById('root'));
