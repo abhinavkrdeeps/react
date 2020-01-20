@@ -5,39 +5,39 @@ function Books(){
 
   return(
     <div>
-    <Book/>
-    <Book/>
-    <Book/>
-    <Book/>
+    <Book image="https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg" title="natures park" author="Abhinav Jha"/>
+    <hr/>
+    <Book image="https://media.gettyimages.com/photos/abstract-network-background-picture-id836272842?s=612x612" title="hyperloop" author="Kumar Gaurav"/>
+   
     </div>
   )
 }
 
-function Book(){
+function Book(props){
 
   return(
     <section>
-    <CoverImage/>
-    <Title/>
-    <Author/>
+    <CoverImage img={props.image}/>
+    <Title title={props.title}/>
+    <Author author={props.author}/>
     </section>
   )
 }
 
-function CoverImage(){
+function CoverImage(props){
 
   return(
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCfwgJxkpxNBZrgdgdy1zNGmJb31IeoOTnzPkvb3bWMpcofQz16A&s" alt="" width="200"></img>
+    <img src={props.img} alt="" width="200"></img>
   )
 }
-function Title(){
+function Title(props){
   return(
-    <h4>Amazon.in</h4>
+    <h4>{props.title}</h4>
   )
 }
-function Author(){
+function Author(props){
   return(
-    <h5>Abhinav Jha</h5>
+    <h5>{props.author}</h5>
   )
 }
 
